@@ -1,0 +1,24 @@
+name: Validate
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+
+permissions:
+    contents: read
+
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+            - name: Validate the marketplace
+              run: npx -y @anthropic-ai/claude-code@2.1.302 plugin validate --strict .
+            - name: Validate the plugin
+              run: npx -y @anthropic-ai/claude-code@2.1.302 plugin validate --strict plugins/heap
+            - name: Validate the skills
+              run: npx -y @anthropic-ai/claude-code@2.1.302 plugin validate --strict plugins/heap/skills
