@@ -1,0 +1,14 @@
+{
+  "name": "heap",
+  "version": "0.1.0",
+  "description": "Use your Heap notes from Claude Code: look up what you saved, save notes, links and chat recaps.",
+  "author": { "name": "Manifold Apps" },
+  "userConfig": {
+    "heap_mcp_url": {
+      "type": "string",
+      "title": "Heap MCP URL",
+      "description": "The Heap MCP server address, ending in /mcp.",
+      "default": "https://notable-bison-166.convex.site/mcp"
+    }
+  }
+}

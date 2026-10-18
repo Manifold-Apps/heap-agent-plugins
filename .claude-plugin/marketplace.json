@@ -1,0 +1,15 @@
+{
+  "name": "heap-agent-plugins",
+  "owner": { "name": "Manifold Apps" },
+  "metadata": {
+    "description": "Plugins for working with Heap from Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "heap",
+      "source": "./plugins/heap",
+      "description": "Use your Heap notes from Claude Code: look up what you saved, save notes, links and chat recaps.",
+      "version": "0.1.0"
+    }
+  ]
+}
