@@ -19,6 +19,7 @@ Look in Heap without being asked when the user refers to something they saved, r
 
 - Use `find_related` when the question is "what do I have on this?". Pass the user's last message plus the few sentences of context that say what it is about, in full sentences, not keywords.
 - Use `search_notes` when they name words, a topic, a person or a time. For "last month" or "in March", pass `since` and `until` as `YYYY-MM-DD` dates, and `timezone` as their IANA zone when you know it.
+- Leave credentials, tokens, keys, passwords and anything the user marked private out of the text you pass to `find_related` and `search_notes`.
 - Do not look on every turn. A general question with no personal cue gets no lookup.
 - Report what came back briefly: the title, one line each, and the link. Say plainly when nothing matched. Never imply a note says more than its fields do.
 - Open a note with `get_note` only when its row is not enough to answer.
@@ -40,11 +41,11 @@ When the user asks to save the chat, or agrees to your offer, save a recap with 
 3. Mint a marker (next section), pass it as `request_id`, and put it on the recap's last line.
 4. After the tool returns, say the marker and the returned `link` in the chat.
 
-In Claude Code, put the working directory on the recap's second line. The marker is how the transcript in `~/.claude/projects` is found again. If the user pasted a share link for this chat, put it under `Links:`; it saves as a link attachment.
+In Claude Code, the marker is how the transcript in `~/.claude/projects` is found again, so leave the working directory out of the recap. If the user pasted a share link for this chat, put it under `Links:`; it saves as a link attachment.
 
 ```
 <one-line title: what the chat was about>
-Chat recap, <YYYY-MM-DD>, <host, e.g. Claude Code in ~/Code/project>
+Chat recap, <YYYY-MM-DD>, <host, e.g. Claude Code>
 
 Covered: <2-5 short lines>
 Decided: <decisions, or "nothing yet">
