@@ -1,6 +1,6 @@
 ---
 name: heap
-description: "Use the user's Heap note library through the Heap MCP tools: look up what they saved when they refer to past reading or notes ('what did I save about…', 'didn't I have notes on…', 'that article I read'), save a note, a link or a recap of this chat when they ask, and find a saved chat again by its marker."
+description: "Load this BEFORE calling any Heap tool, and whenever the user mentions saving something, a note, a link, a recap, Heap, or refers to past reading or notes ('what did I save about…', 'that article I read'): it covers searching their Heap library, saving notes, links and recaps of this chat, and finding a saved chat again by its marker."
 ---
 
 # Heap
@@ -59,7 +59,7 @@ Omit the `Links:` line when there is nothing to put there.
 
 ## The marker
 
-A marker is `heapref` followed by 8 lowercase letters and digits you make up for this save, for example `heapref7k3q9xpa`. It is one word with no punctuation, so Heap's search finds it whole.
+A marker is `heapref` followed by 10 random lowercase letters and digits you make up fresh for this save. It is one word with no punctuation, so Heap's search finds it whole.
 
 - Make a new one for every save. Reuse one only to retry the same save after an error or a timeout, which is then safe.
 - If the server says the `request_id` is already used, mint a new one and call again.
