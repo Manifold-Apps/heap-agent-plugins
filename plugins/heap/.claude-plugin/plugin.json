@@ -8,7 +8,7 @@
       "type": "string",
       "title": "Heap MCP URL",
       "description": "The Heap MCP server address, ending in /mcp.",
-      "default": "https://notable-bison-166.convex.site/mcp"
+      "default": "https://api.heapnotes.com/mcp"
     }
   }
 }
