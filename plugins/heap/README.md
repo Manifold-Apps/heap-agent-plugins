@@ -32,7 +32,7 @@ claude --plugin-dir /path/to/heap-agent-plugins/plugins/heap
 **The server alone, without the skill:**
 
 ```bash
-claude mcp add --transport http heap https://notable-bison-166.convex.site/mcp
+claude mcp add --transport http heap https://api.heapnotes.com/mcp
 ```
 
 ## First run: sign in
