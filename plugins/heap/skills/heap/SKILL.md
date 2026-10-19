@@ -9,9 +9,20 @@ description: "Load this BEFORE calling any Heap tool, and whenever the user ment
 
 Heap holds the user's own saved notes and links, with summaries, topics and the people, places and things they mention. You reach it through the Heap MCP tools. Use them by their bare names; the prefix depends on how the server was added.
 
-- Look up: `search_notes` (words, a topic, a person, a time), `find_related` (a passage from the conversation), `recent_notes`, `list_topics`, `get_note` (one note in full).
+- Look up: `search_notes` (words, a topic, a stack, a person, a time), `find_related` (a passage from the conversation), `recent_notes` (newest first, by topic, person or date), `get_note` (one note in full, with its stacks).
+- Find your way around: `get_overview` (counts and the biggest topics, people and stacks), `list_topics`, `list_entities` (people, places and things), `list_stacks`, `get_stack` (a stack's notes).
 - Save: `save_note` and `save_link`. Saving only creates; nothing here edits or deletes a note.
 - `whoami` says which account is connected.
+
+## Finding your way around
+
+A topic, a person, place or thing (an entity) and a stack are three ways Heap groups notes. A stack is a saved search the user keeps, such as "visa paperwork"; its notes are the ones Heap judged to belong, plus any the user added. Names flow between tools: take a name from a list tool or from a note's fields and pass it as a filter.
+
+- Start with `get_overview` when you know nothing about the user's Heap or a name might not exist. It shows what is there; do not guess names.
+- A topic's notes: `recent_notes` with `topic`. A person's, place's or thing's notes: `recent_notes` with `entity`; each row says whether the note names it (`named`), Heap inferred it (`inferred`) or judged the note to be about it (`about`). Check a spelling with `list_entities` and its `query`.
+- A stack's notes: `get_stack` with the stack's name or id, in pages. It reads what Heap stored and never refreshes the stack, so check `lastEvaluatedAt`. To search only inside a stack, pass `stack` to `search_notes`; it ranks the best matches first and can miss a member that matches weakly, so use `get_stack` when you need every member.
+- From a note: `get_note` lists its topics, entities, stacks and related notes. Follow those names back into the filters.
+- An unknown name comes back with `unknownTopic`, `unknownEntity` or `unknownStack` and no notes. Look the name up in the matching list tool and retry; do not conclude the user has nothing.
 
 ## When to look unprompted
 

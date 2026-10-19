@@ -44,6 +44,7 @@ The plugin's server is its own connection with its own login, separate from any 
 ## What the skill does
 
 - Looks in Heap when you refer to something you saved, read or noted before. It does not look on every turn.
+- Finds its way around your library: it can list your topics, people, places and things, and stacks, open a stack's notes, and follow a name from one to the other, instead of guessing.
 - Saves only when you ask, or after you agree to a save it offered.
 - Saves a recap of the chat on request, shows it first unless you say to skip the review, and ends it with a marker like `heapref7k3q9xpa`. Ask "Find the Heap note for chat heapref7k3q9xpa" to get back to it.
 - Passes the page's text when it saves a link it already has the text for, or one behind a login or paywall, because Heap's own fetch may not read it and a second save of the same address does not use new text.
